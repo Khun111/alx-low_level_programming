@@ -7,9 +7,10 @@ int main(void)
 {
 	int a = 'a';
 
-	while (a <= 'z')
+	while (a < '{')
 	{
 		putchar(a);
+		a++;
 	}
 
 	putchar('\n');

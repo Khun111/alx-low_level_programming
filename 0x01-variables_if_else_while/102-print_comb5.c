@@ -6,7 +6,9 @@
  */
 int main(void)
 {
-	for (int first = 0; first <= 99; first++)
+	int first;
+
+	for (first = 0; first <= 99; first++)
 	{
 		int a = (first / 10);
 		int b = (first % 10);

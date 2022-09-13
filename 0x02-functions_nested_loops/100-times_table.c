@@ -29,17 +29,14 @@ void print_times_table(int n)
 			{
 				int multi = i * j;
 
-				if (multi < 10)
+				if ((multi < 10) && (j != 0))
 				{
-					if (j != 0)
-					{
-						_putchar(' ');
-						_putchar(' ');
-						print_int(multi);
-					}
-					else
-						print_int(multi);
+					_putchar(' ');
+					_putchar(' ');
+					print_int(multi);
 				}
+				else if (j == 0)
+					print_int(multi);
 				else if (multi < 100)
 				{
 					_putchar(' ');

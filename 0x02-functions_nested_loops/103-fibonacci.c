@@ -6,7 +6,7 @@
 int main(void)
 {
 	int f1 = 1;
-	int f2 = 2, i;
+	int f2 = 2;
 	long track = 0;
 
 	while (f2 < 4000000)

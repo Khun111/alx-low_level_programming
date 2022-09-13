@@ -31,11 +31,14 @@ void print_times_table(int n)
 
 				if (multi < 10)
 				{
-					if (j == 0)
+					if (j != 0)
+					{
+						_putchar(' ');
+						_putchar(' ');
 						print_int(multi);
-					_putchar(' ');
-					_putchar(' ');
-					print_int(multi);
+					}
+					else
+						print_int(multi);
 				}
 				else if (multi < 100)
 				{

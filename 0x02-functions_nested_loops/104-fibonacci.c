@@ -5,17 +5,18 @@
  */
 int main(void)
 {
-	int f1 = 1;
-	int f2 = 2, i;
+	double f1 = 1;
+	double f2 = 2;
+	int i;
 
-	printf("%i, %i, ", f1, f2);
+	printf("%f, %f, ", f1, f2);
 	for (i = 3; i < 99; i++)
 	{
 		double next = f1 + f2;
 
 		f1 = f2;
 		f2 = next;
-		printf("%lf", next);
+		printf("%.0f", next);
 		if (i != 98)
 			printf(", ");
 	}

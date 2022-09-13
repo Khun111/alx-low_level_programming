@@ -1,7 +1,7 @@
 #include "main.h"
-#include "_putchar.c"
 /**
  * _islower - check
+ * @c: param
  * Return: 1/0
  */
 int _isalpha(int c)

@@ -1,5 +1,4 @@
 #include "main.h"
-#include "_putchar.c"
 /**
  * jack_bauer - 24jours
  * Return: 0
@@ -24,8 +23,4 @@ void jack_bauer(void)
 		}
 		hours++;
 	}
-}
-int main(void)
-{
-	jack_bauer();
 }

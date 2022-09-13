@@ -1,8 +1,8 @@
 #include "main.h"
-#include "_putchar.c"
 /**
  * _islower - check
  * Return: 1/0
+ * @c: param
  */
 int _islower(int c)
 {

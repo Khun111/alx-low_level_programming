@@ -44,11 +44,11 @@ void print_times_table(int n)
 				}
 				else
 					print_int(multi);
-					if (j != n)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
+				if (j != n)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 				j++;
 			}
 			_putchar('\n');

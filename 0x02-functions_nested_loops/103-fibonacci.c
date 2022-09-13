@@ -20,4 +20,5 @@ int main(void)
 			track += next;
 	}
 	printf("%lu\n", track);
+	return (0);
 }

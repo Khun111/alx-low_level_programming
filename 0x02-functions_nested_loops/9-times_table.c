@@ -5,20 +5,23 @@
  */
 void times_table(void)
 {
-	int i = 0;
+	int i = 0
+
 	while (i < 10)
 	{
 		int j = 0;
+
 		while (j < 10)
 		{
 			int multi = i * j;
+
 			if (j == 0)
 			{
 				_putchar(multi + '0');
 				_putchar(',');
 				_putchar(' ');
 			}
-			else if(multi < 10)
+			else if (multi < 10)
 			{
 				_putchar(' ');
 				_putchar(multi + '0');

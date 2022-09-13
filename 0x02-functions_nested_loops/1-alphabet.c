@@ -6,6 +6,7 @@
 void print_alphabet(void)
 {
 	int i = 'a';
+
 	while (i < '{')
 	{
 		_putchar(i);

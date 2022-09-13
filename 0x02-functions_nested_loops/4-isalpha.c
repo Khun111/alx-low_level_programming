@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _islower - check
+ * _isalpha - check
  * @c: param
  * Return: 1/0
  */

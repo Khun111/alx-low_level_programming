@@ -5,18 +5,18 @@
  */
 int main(void)
 {
-	double f1 = 1;
-	double f2 = 2;
+	long double f1 = 1;
+	long double f2 = 2;
 	int i;
 
-	printf("%.0f, %.0f, ", f1, f2);
+	printf("%.0Lf, %.0Lf, ", f1, f2);
 	for (i = 3; i < 99; i++)
 	{
-		double next = f1 + f2;
+		long double next = f1 + f2;
 
 		f1 = f2;
 		f2 = next;
-		printf("%.0f", next);
+		printf("%.0Lf", next);
 		if (i != 98)
 			printf(", ");
 	}

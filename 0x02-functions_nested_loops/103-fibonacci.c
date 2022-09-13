@@ -5,8 +5,8 @@
  */
 int main(void)
 {
-	int f1 = 1;
-	int f2 = 2;
+	int f1 = 0;
+	int f2 = 1;
 	long track = 0;
 
 	while (f2 < 4000000)

@@ -9,7 +9,7 @@ int main(void)
 	double f2 = 2;
 	int i;
 
-	printf("%f, %f, ", f1, f2);
+	printf("%.0f, %.0f, ", f1, f2);
 	for (i = 3; i < 99; i++)
 	{
 		double next = f1 + f2;

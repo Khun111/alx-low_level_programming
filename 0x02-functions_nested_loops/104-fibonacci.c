@@ -7,33 +7,34 @@
  */
 int main(void)
 {
-	unsigned long int i, j, k, j1, j2, k1, k2;
+	unsigned long int f1, f2, f1d, f2d, f1m, f2m, overflow = 1000000000;
+	int i;
 
-	j = 1;
-	k = 2;
+	f1 = 1;
+	f2 = 2;
 
-	printf("%lu", j);
+	printf("%lu", f1);
 
 	for (i = 1; i < 91; i++)
 	{
-		printf(", %lu", k);
-		k += j;
-		j = k - j;
+		printf(", %lu", f2);
+		f2 += f1;
+		f1 = f2 - f1;
 	}
 
-	j1 = j / 1000000000;
-	j2 = j % 1000000000;
-	k1 = k / 1000000000;
-	k2 = k % 1000000000;
+	f1d = f1 / overflow;
+	f1m = f1 % overflow;
+	f2d = f2 / overflow;
+	f2m = f2 % overflow;
 
 	for (i = 92; i < 99; ++i)
 	{
-		printf(", %lu", k1 + (k2 / 1000000000));
-		printf("%lu", k2 % 1000000000);
-		k1 += j1;
-		j1 = k1 - j1;
-		k2 += j2;
-		j2 = k2 - j2;
+		printf(", %lu", f2d + (f2m / overflow));
+		printf("%lu", f2m % overflow);
+		f2d += f1d;
+		f1d = f2d - f1d;
+		f2m += f1m;
+		f1m = f2m - f1m;
 	}
 
 	printf("\n");

@@ -7,21 +7,21 @@
  */
 int main(void)
 {
-	unsigned long int f1, f2, f1d, f2d, f1m, f2m, overflow = 1000000000;
+	unsigned long f1, f2, f1d, f2d, f1m, f2m, overflow = 1000000000;
 	int i;
 
 	f1 = 1;
 	f2 = 2;
 
 	printf("%lu", f1);
-
+/** print first numbers before overflow **/
 	for (i = 1; i < 91; i++)
 	{
 		printf(", %lu", f2);
 		f2 += f1;
 		f1 = f2 - f1;
 	}
-
+/** use max divisible exp of 10 to separate into parts and accomodate each*/
 	f1d = f1 / overflow;
 	f1m = f1 % overflow;
 	f2d = f2 / overflow;

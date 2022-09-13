@@ -1,7 +1,6 @@
 #include "main.h"
-#include "_putchar.c"
 /**
- * print_int
+ * print_int - helper
  * @i: param
  * Return: 0
  */
@@ -11,6 +10,11 @@ void print_int(int i)
 		print_int(i / 10);
 	_putchar('0' + (i % 10));
 }
+/**
+ * print_times_table - helper
+ * @n: param
+ * Return: 0
+ */
 void print_times_table(int n)
 {
 	if (!(n > 15 || n < 0))
@@ -24,50 +28,31 @@ void print_times_table(int n)
 			while (j <= n)
 			{
 				int multi = i * j;
+
 				if (multi < 10)
 				{
 					if (j == 0)
-					{
 						print_int(multi);
-						_putchar(',');
-						_putchar(' ');
-					}
 					_putchar(' ');
 					_putchar(' ');
 					print_int(multi);
-					if (j != n)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
 				}
 				else if (multi < 100)
 				{
 					_putchar(' ');
 					print_int(multi);
-					if (j != n)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
 				}
 				else
-				{
 					print_int(multi);
 					if (j != n)
 					{
 						_putchar(',');
 						_putchar(' ');
 					}
-				}
 				j++;
 			}
 			_putchar('\n');
 			i++;
 		}
 	}
-}
-int main(void)
-{
-	print_times_table(17);
 }

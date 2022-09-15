@@ -14,9 +14,9 @@ void print_int(int c)
  */
 void more_numbers(void)
 {
-	int i = 0;
+	int i;
 
-	while (i < 10)
+	for (i = 0; i < 10; i++)
 	{
 		int j = 0;
 
@@ -26,6 +26,5 @@ void more_numbers(void)
 			j++;
 		}
 		_putchar('\n');
-		i++;
 	}
 }

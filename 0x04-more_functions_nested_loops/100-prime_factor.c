@@ -1,33 +1,31 @@
 #include <stdio.h>
-long is_prime(long b);
+#include <math.h>
 /**
  * main - prime factors
  * Return: int
  */
 int main(void)
 {
-	long b;
 	long i;
-	long num = 612852475143;
+	long num = 612852475143, max;
 
-	for (i = 2; i < num; i++)
-		if (num % i == 0)
-			if (is_prime(i))
-				b = i;
-	printf("%lu\n", b);
+	while (num % 2 == 0)
+	{
+		max = 2;
+		num /= 2;
+	}
+	for (i = 3; i < sqrt(num); i += 2)
+	{
+		while (num % i == 0)
+		{
+			max = i;
+			num /= i;
+		}
+	}
+	if (num > 2)
+	{
+		max = num;
+	}
+	printf("%lu\n", max);
 	return (0);
-}
-/**
- * is_prime - prime number
- * Return: number
- * @b: param
- */
-long is_prime(long b)
-{
-	long i;
-
-	for (i = 2; i < b; i++)
-		if (b % i == 0)
-			return (0);
-	return (1);
 }

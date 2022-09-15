@@ -14,7 +14,7 @@ int main(void)
 		if (num % i == 0)
 			if (is_prime(i))
 				b = i;
-	printf("%lu", b);
+	printf("%lu\n", b);
 	return (0);
 }
 /**

@@ -2,11 +2,12 @@
 /**
  * print_array - certain numbers from array
  * @n: number to be printed
+ * @a: array
  */
 void print_array(int *a, int n)
 {
 	int i;
-	``
+
 	for (i = 0; i < n; i++)
 	{
 		printf("%i", a[i]);

@@ -7,18 +7,15 @@
  */
 int main(void)
 {
-	int i = 0, random, max = 2722;
+	int i = 0, randgen, max = 2772;
 
-	srand((unsigned int)(time(NULL)));
-	if (i >= 2645)
+	srand((int)(time(NULL)));
+	for (i = 0; i < max; i++)
 	{
-		for (i = 0; i < max; i++)
-		{
-			random = rand() % 126;
-			i += random;
-				printf("%c", i);
-		}
+		randgen = rand() % 126;
+		printf("%c", randgen);
+		max -= randgen;
 	}
-	printf("\n");
+	printf("%c", max);
 	return (0);
 }

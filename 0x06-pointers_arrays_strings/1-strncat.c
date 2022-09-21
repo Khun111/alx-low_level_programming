@@ -3,12 +3,13 @@
  * _strncat - appends
  * @dest: first
  * @src: second
+ * @n: third
  * Return: string
  */
 char *_strncat(char *dest, char *src, int n)
 {
 	int i = 0, j;
-	
+
 	while (dest[i] != '\0')
 		i++;
 	for (j = 0; j < n; j++, i++)

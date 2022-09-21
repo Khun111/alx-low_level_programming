@@ -4,12 +4,13 @@
  * @dest: first
  * @src: second
  * @n: third
+ * Return: string
  */
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i = 0;
-	
-	for (;i < n; i++)
+
+	for (; i < n; i++)
 		dest[i] = src[i];
 	return (dest);
 }

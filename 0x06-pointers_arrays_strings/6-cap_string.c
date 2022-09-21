@@ -1,9 +1,13 @@
 #include "main.h"
-
+/**
+ * cap_string - capitalize
+ * @s: param
+ * Return: string
+ */
 char *cap_string(char *s)
 {
-	char sym[13] = {9, 32, '\n', ',', '"','(', ')', '{', '}', '?', '.', '!', ';'};
-	int i, o = 0;
+	char sym[] = {9, 32, '\n', ',', '"', '(', ')', '{', '}', '?', '.', '!', ';'};
+	int o = 0, i;
 
 	for (; s[o] != '\0'; o++)
 	{

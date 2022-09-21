@@ -6,16 +6,22 @@
  */
 char *rot13(char *s)
 {
+	char lete[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	int i = 0;
 
 	while (s[i] != '\0')
 	{
-		while ((s[i] > '`' && s[i] < '{') || (s[i] > '@' && s[i] < '['))
+		int j = 0;
+
+		while (lete[j] != '\0')
 		{
-			if ((s[i] >= 'a' && s[i] <= 'm') || (s[i] >= 'A' && s[i] <= 'M'))
-				s[i] += 13;
-			s[i] -= 13;
-			i++;
+			if (s[i] == lete[j])
+			{
+				s[i] = rot[j];
+				break;
+			}
+			j++;
 		}
 		i++;
 	}

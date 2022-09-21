@@ -8,7 +8,7 @@ char *rot13(char *s)
 {
 	int i = 0;
 
-	for (; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		while ((s[i] > '`' && s[i] < '{') || (s[i] > '@' && s[i] < '['))
 		{

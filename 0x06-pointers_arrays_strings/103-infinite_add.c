@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+#include "string.h"
 /**
  * infinite_add - complicated
  * @n1: first
@@ -10,7 +10,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int l1 = strlen(n1), l2 = strlen(n2), i, keep, digit;
+	int l1 = strlen(n1), l2 = strlen(n2), i, keep = 0, digit;
 
 	if ((size_r <= l1 + 1) || (size_r <= l2 + 1))
 		return (0);
@@ -28,7 +28,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		strcpy(&(n2[l1 - l2]), r);
 	}
 
-	keep = 0;
+	r[l1 + 1]= '\0';
 
 	for (i = l1; i > 0; i--)
 	{

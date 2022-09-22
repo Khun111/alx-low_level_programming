@@ -27,12 +27,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		memset(n2, '0', l1 - l2);
 		strcpy(&(n2[l1 - l2]), r);
 	}
-
-	r[l1 + 1]= '\0';
-
+	r[l1 + 1] = '\0';
 	for (i = l1; i > 0; i--)
 	{
-		digit = (n1[i -1] - '0') + (n2[i -1] - '0') + keep;
+		digit = (n1[i - 1] - '0') + (n2[i - 1] - '0') + keep;
 		keep = digit / 10;
 		digit = digit % 10;
 		r[i] = digit + '0';
@@ -40,6 +38,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (keep != 0)
 		r[0] = keep + '0';
 	else
-		memmove(r, &(r[1]), l1 + 1);
-	return r;
+		memmove(r, &(r[1]), l1);
+	return (r);
 }

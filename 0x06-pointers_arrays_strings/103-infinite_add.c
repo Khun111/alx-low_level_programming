@@ -1,5 +1,5 @@
 #include "main.h"
-#include "string.h"
+#include <string.h>
 /**
  * infinite_add - complicated
  * @n1: first

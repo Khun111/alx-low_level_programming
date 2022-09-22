@@ -14,6 +14,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	if ((size_r <= l1 + 1) || (size_r <= l2 + 1))
 		return (0);
+
 	if (l1 < l2)
 	{
 		strcpy(r, n1);

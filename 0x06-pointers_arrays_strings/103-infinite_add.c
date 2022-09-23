@@ -37,9 +37,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		digit = digit % 10;
 		r[i] = digit + '0';
 	}
-	if (keep != 0)
-		r[0] = keep + '0';
+	if (keep == 0)
+		return (r + 1);
 	else
-		memmove(r, &(r[1]), l1);
+		r[0] = keep + '0';
 	return (r);
 }

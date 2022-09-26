@@ -9,9 +9,11 @@ unsigned int _strspn(char *s, char *accept)
 		while (*(accept + j))
 		{
 			if (*(s + i) == *(accept + j))
-				k++;
+				break;
 			j++;
 		}
+		if (*(s + i) != *(accept + j))
+			k++;
 	}
 	return (k);
 }

@@ -1,4 +1,8 @@
 #include "main.h"
+/**
+ * print_chessboard - what it says
+ * @a: first
+ */
 void print_chessboard(char (*a)[8])
 {
 	int i = 0, j;

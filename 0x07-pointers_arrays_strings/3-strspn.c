@@ -1,7 +1,7 @@
 #include "main.h"
 unsigned int _strspn(char *s, char *accept)
 {
-	int i = 0, j, k = 0;
+	size_t i = 0, j, k = 0;
 
 	for (; *(s + i); i++)
 	{

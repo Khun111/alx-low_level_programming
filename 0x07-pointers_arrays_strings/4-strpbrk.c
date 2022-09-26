@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * _strpbrk - show all from first
+ * @s: first
+ * @accept: second
+ * Return: string
+ */
 char *_strpbrk(char *s, char *accept)
 {
 	int i = 0, j;

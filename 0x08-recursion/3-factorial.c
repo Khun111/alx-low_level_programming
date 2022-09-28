@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * factorial - content
+ * @n: param
+ * Return: number
+ */
 int factorial(int n)
 {
 	if (n < 0)

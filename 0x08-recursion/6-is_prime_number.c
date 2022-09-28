@@ -12,7 +12,7 @@ int isPrime(int n, int i)
 	if (i != 1)
 	{
 		if (n % i != 0)
-			return isPrime(n, i - 1);
+			return (isPrime(n, i - 1));
 		return (0);
 	}
 	return (1);

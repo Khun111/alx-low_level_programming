@@ -3,7 +3,7 @@
 /**
  * main - program name
  * @count: first
- * @name: second
+ * @value: second
  * Return: 0
  */
 int main(int count, char **value)
@@ -13,7 +13,7 @@ int main(int count, char **value)
 	for (; i < count; i++)
 	{
 		j = 0;
-		for (; *(*(value + i) +j) != '\0'; j++)
+		for (; *(*(value + i) + j) != '\0'; j++)
 		{
 			if ((*(*(value + i) + j) < '0' || *(*(value + i) + j) > '9'))
 			{

@@ -3,7 +3,7 @@
 /**
  * main - program name
  * @count: first
- * @name: second
+ * @value: second
  * Return: 0
  */
 int main(int count, char **value)

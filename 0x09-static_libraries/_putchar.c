@@ -1,7 +1,7 @@
 #include <unistd.h>
 /**
  * _putchar - a char
- * @a - param
+ * @a: param
  * Return: number
  */
 int _putchar(char a)

@@ -1,18 +1,12 @@
-#include "main.h"
+#include <unistd.h>
 /**
- * main - entry
- * Return: 0
+ * _putchar - a char
+ * @a - param
+ * Return: number
  */
-int main(void)
+int _putchar(char a)
 {
-	char str_arr[] = "_putchar";
-	int c = 0;
+	int n = write(1, &a, 1);
 
-	while (str_arr[c] != '\0')
-	{
-		_putchar(str_arr[c]);
-		c++;
-	}
-	_putchar('\n');
-	return (0);
+	return (n);
 }

@@ -1,20 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main(int count, char *value[])
+/**
+ * main - program name
+ * @count: first
+ * @name: second
+ * Return: 0
+ */
+int main(int count, char **value)
 {
-	int i = 1, j = 0, k = 0;
+	int i = 1, j, k = 0;
 
 	for (; i < count; i++)
 	{
-		for (; value[i][j] != '\0'; j++)
+		j = 0;
+		for (; *(*(value + i) +j) != '\0'; j++)
 		{
-			if (!(value[i][j] >= '0' && value[i][j] <= '9'))
+			if (((value[i][j]) < '0' || (value[i][j]) > '9'))
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-		k += atoi(value[i]);
+		k += atoi(*(value + i));
 	}
 	printf("%i\n", k);
 	return (0);

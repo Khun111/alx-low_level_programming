@@ -15,7 +15,7 @@ int main(int count, char **value)
 		j = 0;
 		for (; *(*(value + i) +j) != '\0'; j++)
 		{
-			if (((value[i][j]) < '0' || (value[i][j]) > '9'))
+			if ((*(*(value + i) + j) < '0' || *(*(value + i) + j) > '9'))
 			{
 				printf("Error\n");
 				return (1);

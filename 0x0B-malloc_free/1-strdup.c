@@ -1,5 +1,11 @@
+#include "main.h"
 #include <stdlib.h>
 #include "string.h"
+/**
+ * _strdup - function
+ * @str: param
+ * Return: string
+ */
 char *_strdup(char *str)
 {
 	int size = strlen(str) + 1;

@@ -1,5 +1,12 @@
+#include "main.h"
 #include <stdlib.h>
 #include "string.h"
+/**
+ * str_concat - function
+ * @s1: param
+ * @s2: param
+ * Return: string
+ */
 char *str_concat(char *s1, char *s2)
 {
 	int i, j, v1, v2, size;

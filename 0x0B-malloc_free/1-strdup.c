@@ -8,10 +8,13 @@
  */
 char *_strdup(char *str)
 {
-	int size = strlen(str) + 1;
-	int i = 0;
-	char*s = malloc(size * sizeof(char));
+	int size, i = 0;
+	char*s
 
+	if (str == NULL)
+		return (NULL);
+	size = strlen(str) + 1
+	s = malloc(size * sizeof(char));
 	if (s == NULL)
 		return (NULL);
 	for (; *(str + i); i++)

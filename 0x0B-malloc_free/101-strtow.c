@@ -9,6 +9,7 @@
 void free_str(char **grid, unsigned int height)
 {
 	unsigned int i;
+
 	if (grid != NULL && height != 0)
 	{
 		for (i = 0; i < height; i++)
@@ -49,7 +50,7 @@ char **strtow(char *str)
 				cnt++;
 			if (*(str + n) != ' ' && (str[n + 1] == ' ' || str[n + 1] == '\0'))
 			{
-				splitStr[i] = malloc((n - cnt + 1) * sizeof(char));
+				splitStr[i] = malloc((n - cnt + 2) * sizeof(char));
 				if (splitStr[i] == NULL)
 				{
 					free_str(splitStr, i);

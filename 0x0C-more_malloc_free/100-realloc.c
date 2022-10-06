@@ -1,10 +1,10 @@
 #include "main.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *rptr;
-	int i;
+	char *rptr;
+	unsigned int i;
 
 	if (old_size == new_size)
 		return (ptr);
@@ -26,7 +26,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		old_size = new_size;
 	for (i = 0; i < old_size; i++)
 	{
-		rptr[i] = ptr[i];
+		*(rptr + i) = *((char *)ptr + i);
+		free(ptr);
 	}
 	return (rptr);
 }

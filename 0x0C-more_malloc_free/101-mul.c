@@ -7,8 +7,8 @@
  */
 int main(int count, char **value)
 {
-	long num1 = atol(value[1]), num2 = atol(value[2]), i = 1, j;
 	unsigned long mul;
+	int i = 1, j;
 
 	if (count != 3)
 	{
@@ -27,7 +27,7 @@ int main(int count, char **value)
 			}
 		}
 	}
-	mul = num2 * num1;
+	mul = atol(value[1]) * atol(value[2]);
 	printf("%lu\n", mul);
 	return (0);
 }

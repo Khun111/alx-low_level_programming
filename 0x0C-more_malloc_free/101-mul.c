@@ -8,7 +8,8 @@
 int main(int count, char **value)
 {
 	long num1 = atol(value[1]), num2 = atol(value[2]), i = 1, j;
-	unsigned long mul; 
+	unsigned long mul;
+
 	if (count != 3)
 	{
 		printf("Error\n");

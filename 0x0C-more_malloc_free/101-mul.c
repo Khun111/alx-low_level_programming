@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * main - multiply 2 numbers from cmd line
+ * @count: argc
+ * @value: argv
+ * Return: 0 at success
+ */
 int main(int count, char **value)
 {
 	long num1 = atol(value[1]), num2 = atol(value[2]), i = 1, j;

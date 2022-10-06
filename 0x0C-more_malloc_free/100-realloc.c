@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
-
+/**
+ * _realloc - reallocate memory address
+ * @ptr : old pointer
+ * @old_size: param
+ * @new_size: param
+ * Return: new pointer
+ */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *rptr;

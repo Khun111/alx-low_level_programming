@@ -1,4 +1,5 @@
 #include "dog.h"
+#include "string.h"
 /**
  * new_dog - function to create new dog
  * @name: name location gets altered

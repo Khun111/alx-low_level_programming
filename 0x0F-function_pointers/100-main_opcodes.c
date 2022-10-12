@@ -8,7 +8,7 @@
  */
 int main(int count, char **value)
 {
-	char *ref;
+	char *ref = (char *)main;
 	int i = 0, num;
 
 	if (count != 2)
@@ -22,10 +22,8 @@ int main(int count, char **value)
 		printf("Error\n");
 		exit(2);
 	}
-	ref = (char *)main;
-	for(; i < (num - 1); i++)
-		printf("%.02x ", ref[i]);
-	printf("%.02x", ref[i]);
-	printf("\n");
+	for (; i < (num - 1); i++)
+		printf("%02x ", (unsigned char)ref[i]);
+	printf("%02x\n", (unsigned char)ref[i]);
 	return (0);
 }

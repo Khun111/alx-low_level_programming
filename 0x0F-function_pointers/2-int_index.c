@@ -4,6 +4,7 @@
  * @array: param
  * @size: array size
  * @cmp: function pointer
+ * Return: index if true
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
@@ -12,8 +13,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	if (array == NULL || cmp == NULL || size < 0)
 		return (-1);
 	for (; i < size; i++)
-		if(cmp(array[i]))
+		if (cmp(array[i]))
 			return (i);
 	return (-1);
-	
 }

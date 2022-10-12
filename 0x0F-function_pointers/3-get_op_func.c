@@ -1,4 +1,9 @@
 #include "3-calc.h"
+/**
+ * get_op_func - call function with pointer
+ * @s: param
+ * Return: result;
+ */
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {

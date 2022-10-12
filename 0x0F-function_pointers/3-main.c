@@ -1,4 +1,10 @@
 #include "3-calc.h"
+/**
+ * main - calculate
+ * @count: number of args
+ * @value: arg
+ * Return: result
+ */
 int main(int count, char **value)
 {
 	char *arith;

@@ -25,8 +25,8 @@ int main(int count, char **value)
 	}
 	if ((*arith == '/' && num2 == 0) || (*arith == '%' && num2 == 0))
 	{
-			printf("Error\n");
-			exit(100);
+		printf("Error\n");
+		exit(100);
 	}
 	result = get_op_func(arith)(num1, num2);
 	printf("%i\n", result);

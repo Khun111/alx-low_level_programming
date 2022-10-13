@@ -1,4 +1,8 @@
 #include "variadic_functions.h"
+/**
+ * print_all - print args arcording to specifier
+ * @format: format specifiers
+ */
 void print_all(const char * const format, ...)
 {
 	int j = 0, l = strlen(format) - 1;
@@ -29,6 +33,11 @@ void print_all(const char * const format, ...)
 	}
 	putchar('\n');
 }
+/**
+ * separator - put separator between args
+ * @a: param
+ * @b: param
+ */
 void separator(int a, int b)
 {
 	if (a != b)

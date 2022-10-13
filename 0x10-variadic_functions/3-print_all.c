@@ -10,7 +10,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 
 	va_start(args, format);
-	while (format && (format[j]))
+	while (format && (j <= l))
 	{
 		switch (format[j])
 		{
@@ -32,6 +32,7 @@ void print_all(const char * const format, ...)
 		j++;
 	}
 	putchar('\n');
+	va_end(args);
 }
 /**
  * separator - put separator between args

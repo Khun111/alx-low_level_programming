@@ -14,20 +14,24 @@ void print_all(const char * const format, ...)
 	{
 		switch (format[j])
 		{
-			case 'c': printf("%c", va_arg(args, int));
-					  separator(j, l);
-					  break;
-			case 'i': printf("%i", va_arg(args, int));
-					  separator(j, l);
-					  break;
-			case 'f': printf("%f", va_arg(args, double));
-					  separator(j, l);
-					  break;
-			case 's': x = va_arg(args, char *);
-					  if(!x)
-						  x = "(nil)";
-					  printf("%s", x);
-					  break;
+			case 'c':
+				printf("%c", va_arg(args, int));
+				separator(j, l);
+				break;
+			case 'i':
+				printf("%i", va_arg(args, int));
+				separator(j, l);
+				break;
+			case 'f':
+				printf("%f", va_arg(args, double));
+				separator(j, l);
+				break;
+			case 's':
+				x = va_arg(args, char *);
+				if (!x)
+					x = "(nil)";
+				printf("%s", x);
+				break;
 		}
 		j++;
 	}

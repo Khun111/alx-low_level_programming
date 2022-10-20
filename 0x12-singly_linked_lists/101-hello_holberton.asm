@@ -1,5 +1,5 @@
 section .data
-        text db "Hello, Holberton", 10
+        text db "Hello, Holberton", 0xa
 
 section .text
         global main

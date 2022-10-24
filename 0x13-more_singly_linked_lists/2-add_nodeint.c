@@ -2,6 +2,7 @@
 /**
  * add_nodeint - adds new node to the beginning
  * @head: list head
+ * @n: node data
  * Return: new node
  */
 listint_t *add_nodeint(listint_t **head, const int n)

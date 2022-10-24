@@ -2,6 +2,7 @@
 /**
  * add_nodeint_end - adds new node to the end
  * @head: list head
+ * @n: node data
  * Return: new node
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)

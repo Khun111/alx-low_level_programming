@@ -28,7 +28,7 @@ size_t print_listint_safe(const listint_t *head)
 				slowptr = slowptr->next;
 				fastptr = fastptr->next;
 			}
-            slowptr = slowptr->next;
+			slowptr = slowptr->next;
 			while (trav != NULL)
 			{
 				if (trav == fastptr)
@@ -38,9 +38,9 @@ size_t print_listint_safe(const listint_t *head)
 					printf("-> [%p] %d\n", (void *)fastptr->next, fastptr->next->n);
 					return (i);
 				}
-                else
-                    printf("[%p] %d\n", (void *)trav, trav->n);
-                i++;
+				else
+					printf("[%p] %d\n", (void *)trav, trav->n);
+				i++;
 				trav = trav->next;
 			}
 		}

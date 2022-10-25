@@ -38,11 +38,11 @@ size_t print_listint_safe(const listint_t *head)
 					printf("-> [%p] %d\n", (void *)fastptr->next, fastptr->next->n);
 					return (i);
 				}
-				i++;
-				printf("[%p] %d\n", (void *)trav, trav->n);
+                else
+                    printf("[%p] %d\n", (void *)trav, trav->n);
+                i++;
 				trav = trav->next;
 			}
-
 		}
 	}
 	i = print_list(head);

@@ -27,8 +27,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			trav = trav->next;
 			i++;
 		}
-		if (!(trav->next))
-			return (NULL);
 		addidx->next = trav->next;
 		trav->next = addidx;
 	}

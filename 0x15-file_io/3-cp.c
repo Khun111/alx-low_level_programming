@@ -17,11 +17,6 @@ void check_valid(int val, char *filename, char mode)
 		dprintf(STDERR_FILENO, "Error: Can't writeto %s\n", filename);
 		exit(99);
 	}
-	else if (val == -1 && mode == 'C')
-	{
-		dprintf(STDERR_FILENO, "Can't close fd %i\n", val);
-		exit(100);
-	}
 }
 /**
  * main - main function
@@ -33,7 +28,7 @@ int main(int count, char **value)
 {
 	int file_fro, file_to, c_read = 1024, exit1, exit2, c_written;
 	char buf[1024];
-	unsigned int permissions = (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	unsigned int permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (count != 3)
 	{

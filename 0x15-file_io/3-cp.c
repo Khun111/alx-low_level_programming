@@ -9,17 +9,17 @@ void check_valid(int val, char *filename, char mode)
 {
 	if (val == -1 && mode == 'O')
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
 	else if (val == -1 && mode == 'W')
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", filename);
+		dprintf(STDERR_FILENO, "Error: Can't writeto %s\n", filename);
 		exit(99);
 	}
 	else if (val == -1 && mode == 'C')
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %i", val);
+		dprintf(STDERR_FILENO, "Can't close fd %i\n", val);
 		exit(100);
 	}
 }
@@ -37,7 +37,7 @@ int main(int count, char **value)
 
 	if (count != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 

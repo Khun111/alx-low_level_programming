@@ -56,9 +56,15 @@ int main(int count, char **value)
 	}
 	exit1 = close(file_fro);
 	if (exit1 == -1)
-		check_valid(exit1, NULL, 'C');
+	{
+		dprintf(STDERR_FILENO, "Can't close fd %i\n", file_fro);
+		exit(100);
+	}
 	exit2 = close(file_to);
 	if (exit2 == -1)
-		check_valid(exit2, NULL, 'C');
+	{
+		dprintf(STDERR_FILENO, "Can't close fd %i\n", file_to);
+		exit(100);
+	}
 	return (0);
 }

@@ -1,11 +1,23 @@
 #include "main.h"
-int _strlen (char *txt)
+/**
+ * _strlen - finds length of string
+ * @txt: string
+ * Return: length
+*/
+int _strlen(char *txt)
 {
 	int length = 0;
+
 	for (; txt[length]; length++)
 	;
 	return (length);
 }
+/**
+ * append_text_to_file - appends text to a file
+ * @filename: file to append
+ * @text_content: text to append
+ * Return: 1 on success
+*/
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, c_written;

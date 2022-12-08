@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * dlistint_t - count list items
+ * dlistint_len - count list items
  * @h: list
  * Return: node number
  */

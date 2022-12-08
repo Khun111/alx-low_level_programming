@@ -1,4 +1,11 @@
 #include "lists.h"
+/**
+ * insert_dnodeint_at_index - insert at idx
+ * @h: list head
+ * @idx: index to insert at
+ * @n: list data
+ * Return: node
+ */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *trav = *h, *new_node;

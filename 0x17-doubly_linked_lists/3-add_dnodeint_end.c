@@ -1,4 +1,10 @@
 #include "lists.h"
+/**
+ * add_dnodeint_end - adds new_node to end
+ * @head: list head
+ * @n: node data
+ * Return: new_node
+ */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node = malloc(sizeof(dlistint_t)), *end;

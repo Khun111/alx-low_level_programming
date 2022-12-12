@@ -1,3 +1,4 @@
 #!/bin/bash
-wget -q --output-document=$HOME/lib101-makemewin.so https://github.com/B3zaleel/alx-low_level_programming/raw/main/0x18-dynamic_libraries/lib101-makemewin.so
-export LD_PRELOAD=$HOME/lib101-makemewin.so
+#!/bin/bash
+wget -q -O /tmp/gigalib.so "https://raw.githubusercontent.com/edward0rtiz/holbertonschool-low_level_programming/master/0x18-dynamic_libraries/gigalib.so"
+export LD_PRELOAD=/tmp/gigalib.so

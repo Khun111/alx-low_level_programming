@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dup_value;
 	unsigned long int hash_index, i;
 
-	if (!ht || !value || !key || *key == '\0')
+	if (!ht || !key || *key == '\0' || !value)
 		return (0);
 	dup_value = strdup(value);
 	if (!value)
@@ -23,9 +23,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	for (i = hash_index; ht->array[i]; i++)
 	{
 		if (strcmp(ht->array[i]->key, key) == 0)
+		{
+
 			free(ht->array[i]->value);
-		ht->array[i]->value = dup_value;
-		return (1);
+			ht->array[i]->value = dup_value;
+			return (1);
+		}
 	}
 
 	node_collide = malloc(sizeof(hash_node_t *));

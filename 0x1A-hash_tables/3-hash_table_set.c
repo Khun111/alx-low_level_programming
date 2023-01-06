@@ -1,18 +1,25 @@
 #include "hash_tables.h"
 
+/**
+ * hash_table_set - function to set/update value
+ * @ht: table
+ * @key: key used to update value
+ * @value: value to ve updated
+ * Return: 1/0
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *node_collide;
 	char *dup_value;
 	unsigned long int hash_index, i;
 
-	if (!ht || !value || !key || key = "")
+	if (!ht || !value || !key || *key == '\0')
 		return (0);
 	dup_value = strdup(value);
 	if (!value)
 		return (0);
-	hash_index = key_index((const unsigned char *)key, ht->size)
-	
+	hash_index = key_index((const unsigned char *)key, ht->size);
+
 	for (i = hash_index; ht->array[i]; i++)
 	{
 		if (strcmp(ht->array[i]->key, key) == 0)

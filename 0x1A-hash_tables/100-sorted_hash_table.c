@@ -39,7 +39,7 @@ void helpersort(shash_table_t *ht, shash_node_t *node_collide, const char *key)
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-	shash_table_t *table = malloc(sizeof(hash_table_t));
+	shash_table_t *table = malloc(sizeof(shash_table_t));
 	unsigned long int i = 0;
 
 	if (!table)

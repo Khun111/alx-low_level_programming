@@ -1,4 +1,37 @@
 #include "hash_tables.h"
+
+void helpersort(shash_table_t *ht, shash_node_t *node_collide, const char *key)
+{
+	shash_node_t *trav;
+
+	if (!ht->shead)
+	{
+		node_collide->sprev = NULL;
+		node_collide->snext = NULL;
+		ht->shead = node_collide;
+		ht->stail = node_collide;
+	}
+	else if (strcmp(node_collide->key, key) > 0)
+	{
+		node_collide->sprev = NULL;
+		node_collide->snext = ht->shead;
+		ht->shead->sprev = node_collide;
+		ht->shead = node_collide;
+	}
+	else
+	{
+		trav = ht->shead;
+		while (trav && (strcmp(node_collide->key, key) < 0))
+			trav = trav->snext;
+		node_collide->sprev = trav;
+		node_collide->snext = trav->snext;
+		if (!trav->snext)
+			ht->stail = node_collide;
+		else
+			trav->snext->sprev = node_collide;
+		trav->snext = node_collide;
+	}
+}
 /**
  * shash_table_create - function to create hash table
  * @size: size of table
@@ -32,7 +65,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *node_collide, *trav;
+	shash_node_t *node_collide;
 	char *dup_value;
 	unsigned long int hash_index, i;
 
@@ -69,33 +102,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	node_collide->value = dup_value;
 	node_collide->next = ht->array[hash_index];
 	ht->array[hash_index] = node_collide;
-		if (!ht->shead)
-		{
-			node_collide->sprev = NULL;
-			node_collide->snext = NULL;
-			ht->shead = node_collide;
-			ht->stail = node_collide;
-		}
-		else if (strcmp(node_collide->key, key) > 0)
-		{
-			node_collide->sprev = NULL;
-			node_collide->snext = ht->shead;
-			ht->shead->sprev = node_collide;
-			ht->shead = node_collide;
-		}
-		else
-		{
-			trav = ht->shead;
-			while (trav && (strcmp(node_collide->key, key) < 0))
-				trav = trav->snext;
-			node_collide->sprev = trav;
-			node_collide->snext = trav->snext;
-			if (!trav->snext)
-				ht->stail = node_collide;
-			else
-				trav->snext->sprev = node_collide;
-			trav->snext = node_collide;
-		}
+	helpersort(ht, node_collide, key);
 	return (1);
 }
 

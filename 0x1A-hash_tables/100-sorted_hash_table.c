@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hash_table_create - function to create hash table
+ * shash_table_create - function to create hash table
  * @size: size of table
  * Return: pointer to table
  */
@@ -24,7 +24,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * hash_table_set - function to set/update value
+ * shash_table_set - function to set/update value
  * @ht: table
  * @key: key used to update value
  * @value: value to ve updated
@@ -32,43 +32,43 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-        shash_node_t *node_collide, *trav;
-        char *dup_value;
-        unsigned long int hash_index, i;
+	shash_node_t *node_collide, *trav;
+	char *dup_value;
+	unsigned long int hash_index, i;
 
-        if (!ht || !key || *key == '\0' || !value)
-                return (0);
-        dup_value = strdup(value);
-        if (!value)
-                return (0);
-        hash_index = key_index((const unsigned char *)key, ht->size);
+	if (!ht || !key || *key == '\0' || !value)
+		return (0);
+	dup_value = strdup(value);
+	if (!value)
+		return (0);
+	hash_index = key_index((const unsigned char *)key, ht->size);
 
-        for (i = hash_index; ht->array[i]; i++)
-        {
-                if (strcmp(ht->array[i]->key, key) == 0)
-                {
+	for (i = hash_index; ht->array[i]; i++)
+	{
+		if (strcmp(ht->array[i]->key, key) == 0)
+		{
 
-                        free(ht->array[i]->value);
-                        ht->array[i]->value = dup_value;
-                        return (1);
-                }
-        }
+			free(ht->array[i]->value);
+			ht->array[i]->value = dup_value;
+			return (1);
+		}
+	}
 
-        node_collide = malloc(sizeof(hash_node_t *));
-        if (!node_collide)
-        {
-                free(dup_value);
-                return (0);
-        }
-        node_collide->key = strdup(key);
-        if (!node_collide->key)
-        {
-                free(node_collide);
-                return (0);
-        }
-        node_collide->value = dup_value;
-        node_collide->next = ht->array[hash_index];
-        ht->array[hash_index] = node_collide;
+	node_collide = malloc(sizeof(hash_node_t *));
+	if (!node_collide)
+	{
+		free(dup_value);
+		return (0);
+	}
+	node_collide->key = strdup(key);
+	if (!node_collide->key)
+	{
+		free(node_collide);
+		return (0);
+	}
+	node_collide->value = dup_value;
+	node_collide->next = ht->array[hash_index];
+	ht->array[hash_index] = node_collide;
 		if (!ht->shead)
 		{
 			node_collide->sprev = NULL;
@@ -96,43 +96,47 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 				trav->snext->sprev = node_collide;
 			trav->snext = node_collide;
 		}
-        return (1);
+	return (1);
 }
 
 /**
- * hash_table_get - function to retreive value
+ * shash_table_get - function to retreive value
  * @ht: table
  * @key: key to retreive value from
  * Return: value
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-        unsigned long int hash_index;
-        shash_node_t *node;
+	unsigned long int hash_index;
+	shash_node_t *node;
 
-        if (!ht || !key || *key == '\0')
-                return (NULL);
-        hash_index = key_index((const unsigned char *) key, ht->size);
-        if (hash_index >= ht->size)
-                return (NULL);
+	if (!ht || !key || *key == '\0')
+		return (NULL);
+	hash_index = key_index((const unsigned char *) key, ht->size);
+	if (hash_index >= ht->size)
+		return (NULL);
 
-        node = ht->shead;
-        while (node)
-        {
-                if (strcmp(node->key, key) == 0)
-                        return (node->value);
-                node = node->snext;
-        }
-        return (NULL);
+	node = ht->shead;
+	while (node)
+	{
+		if (strcmp(node->key, key) == 0)
+			return (node->value);
+		node = node->snext;
+	}
+	return (NULL);
 }
 
+/**
+ * shash_table_print - function to print table
+ * @ht: table
+ */
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *node;
-	
+
 	if (!ht)
 		return;
-	
+
 	node = ht->shead;
 	printf("{");
 
@@ -146,50 +150,55 @@ void shash_table_print(const shash_table_t *ht)
 	printf("}\n");
 }
 
+/**
+ * shash_table_print_rev - function to print table
+ * @ht: table
+ */
 void shash_table_print_rev(const shash_table_t *ht)
 {
-        shash_node_t *node;
+	shash_node_t *node;
 
-        if (!ht)
-                return;
+	if (!ht)
+		return;
 
-        node = ht->stail;
-        printf("{");
+	node = ht->stail;
+	printf("{");
 
-        while (node)
-        {
-                printf("'%s': '%s'", node->key, node->value);
-                node = node->sprev;
-                if (node)
-                        printf(", ");
-        }
-        printf("}\n");
+	while (node)
+	{
+		printf("'%s': '%s'", node->key, node->value);
+		node = node->sprev;
+		if (node)
+			printf(", ");
+	}
+	printf("}\n");
 }
 
-/**                                              * hash_table_delete - function to delete table
+/**
+ * shash_table_delete - function to delete table
  * @ht: table
  */
 void shash_table_delete(shash_table_t *ht)
 {
-        shash_node_t *node, *trav;
-        unsigned long int i = 0;
+	shash_node_t *node, *trav;
+	unsigned long int i = 0;
 
-        for (; i < ht->size; i++)
-        {
-                if (ht->shead)
-                {
-                        node = ht->shead;
-                        while (node)
-                        {
-                                trav = node;
-                                node = node->next;
-                                free(trav->value);
-                                free(trav->key);
-                                free(trav);
-                        }
+	for (; i < ht->size; i++)
+	{
+		if (ht->shead)
+		{
+			node = ht->shead;
+			while (node)
+			{
+				trav = node;
+				node = node->next;
+				free(trav->value);
+				free(trav->key);
+				free(trav);
+			}
 
-                }
-        }
-        free(ht->array);
-        free(ht);
+		}
+	}
+	free(ht->array);
+	free(ht);
 }

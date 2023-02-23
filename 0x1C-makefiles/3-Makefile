@@ -6,7 +6,7 @@ NAME = school
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 clean:
-	find . -type f \( -name '*~' -o -name '.*.sw?' -o -name $(NAME) \) -delete
+	rm -f *~ school
 oclean:
 	rm -f $(OBJ)
 fclean: clean oclean

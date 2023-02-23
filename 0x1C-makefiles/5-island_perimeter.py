@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 '''Module for island perimeter function'''
+
+
 def island_perimeter(grid):
     '''Island Perimeter Function'''
     if not grid or len(grid) == 0:
@@ -16,4 +18,3 @@ def island_perimeter(grid):
                 if j > 0 and grid[i][j - 1] == 1:
                     peri -= 2
     return peri
-
